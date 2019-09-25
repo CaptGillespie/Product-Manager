@@ -1,0 +1,48 @@
+<div class="container">
+        <h1>Update This Restaurant:</h1>
+        <!-- {{ thepet | json }} -->
+        <form class="form">  
+            <p>Restaurant's Name:</p>
+            <span style='color:red' *ngIf="!name.valid">What do we call them?</span><br>
+            <input class="input" [(ngModel)]="therestaurant.name" name="therestaurant.name" #name="ngModel" required minlength="3" >
+            <p>Restaurant's Type:</p>
+            <span style='color:red' *ngIf="!type.valid">Fast, slow, or homecooked?</span><br>
+            <input class="input" name="therestaurant.type"[(ngModel)]="therestaurant.type" #type="ngModel" required minlength="3">
+            <br>
+            <p>Restaurant's Description:</p>
+            <span style='color:red' *ngIf="!description.valid">Could you describe them?</span><br>
+            <input class="input" name="therestaurant.description"[(ngModel)]="therestaurant.description" #description="ngModel" required minlength="3">
+            <br>
+            <input *ngIf="name.valid && description.valid && type.valid" id="btn"  (click)="updateARestaurant(therestaurant)" value="Update This Restaurant!">
+            <button id="home" [routerLink]="['/home']">Home</button>
+          </form>
+    </div>
+    
+    
+    <style>
+    .container{
+      text-align: center;
+    }
+    .input{
+      outline: 2px solid black;
+      text-align: center;
+    }
+    #btn{
+      outline: 2px solid black;
+      margin: 20px;
+      background-color: green;
+      color:white;
+      text-align: center;
+      width: 100px;
+      height: 75px;
+    }
+    #home{
+        background-color: red;
+        color: white;
+        outline: 2px solid black;
+        width: 100px;
+        height: 75px;
+        text-align: center;
+        margin: 20px;
+    }
+    </style>

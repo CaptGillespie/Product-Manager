@@ -1,0 +1,47 @@
+<div class="container">
+        <h1>More About This Restaurant:</h1>
+        <h2>Restaurant Name:</h2>
+        <h3>{{selectedRestaurant.name}}</h3>
+    
+        <h2>Restaurant Type:</h2>
+        <h3>{{selectedRestaurant.type}}</h3>
+    
+        <h2>Restaurant Description:</h2>
+        <h3>{{selectedRestaurant.description}}</h3>
+
+        <h2>Reviews:</h2>
+        <!-- <div *ngFor="let rev of selectedRestaurant.reviews">
+               <p> {{ rev.yourname}} </p>
+               <p> {{ rev.stars}} </p>
+               <p> {{ rev.comment}} </p>
+        </div> -->
+        
+        <button id="review" [routerLink]="['/review', selectedRestaurant]">Leave Review</button> | <button id="home" [routerLink]="['/home']">Home</button>
+    </div>
+    
+    <style>
+    .container{
+        text-align: center;
+    }
+    #home{
+        background-color: red;
+        color: white;
+        outline: 2px solid black;
+        width: 100px;
+        height: 75px;
+        text-align: center;
+        margin: 20px;
+        font-size: 20px;
+    }
+    #review{
+        background-color: rgb(8, 150, 20);
+        color: white;
+        outline: 2px solid black;
+        width: 100px;
+        height: 75px;
+        text-align: center;
+        margin: 20px;
+        font-size: 20px;
+        display: top;
+    }
+    </style>
